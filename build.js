@@ -23,7 +23,7 @@ function base64_encode(file, filename) {
     var bitmap = fs.readFileSync(file, 'utf-8');
 
     // convert binary data to base64 encoded string
-    var base64Str = new Buffer(bitmap).toString('base64');
+    var base64Str = new Buffer.from(bitmap).toString('base64');
 
     fs.writeFileSync(filename, base64Str);
 }

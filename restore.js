@@ -27,7 +27,7 @@ function base64_decode(file, filename) {
     var bitmap = fs.readFileSync(file, 'utf-8');
 
     // convert binary data to ascii encoded string
-    var asciiStr = new Buffer(bitmap, 'base64').toString('utf8');
+    var asciiStr = new Buffer.from(bitmap, 'base64').toString('utf8');
 
     fs.writeFileSync(filename, asciiStr);
 }
